@@ -1,0 +1,2 @@
+[phpextensions]
+extensions = [ "mysqli" ]
