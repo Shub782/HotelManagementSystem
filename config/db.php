@@ -1,16 +1,12 @@
 <?php
-try {
-    $host = getenv('MYSQLHOST');
-    $port = getenv('MYSQLPORT');
-    $dbname = getenv('MYSQLDATABASE');
-    $user = getenv('MYSQLUSER');
-    $pass = getenv('MYSQLPASSWORD');
-    
-    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    // Your database connection is now $pdo instead of $conn
-} catch(PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+$host = "sql201.infinityfree.com";
+$user = "if0_41566926";
+$pass = "YOUR_VPANEL_PASSWORD";  // Your InfinityFree login password
+$db   = "if0_41566926_hotel_db";
+
+$conn = mysqli_connect($host, $user, $pass, $db);
+
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
 }
 ?>
